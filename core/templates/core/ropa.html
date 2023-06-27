@@ -1,7 +1,7 @@
 
     {% extends 'core/base.html' %}
     {% load static %}
-    
+    {% load custom_filters %}
     {% block content %}
         <div class="text-center">
         <h1>¡Concursa por una prenda de vestir!</h1>
@@ -41,5 +41,5 @@
     </div>
     {% endblock content %}
     {% block script %}
-    <script src="{% static 'core/js/scriptf.js' %}"></script>
+    <script src="{% static 'core/js/ropa.js' %}"></script>
     {% endblock script%}
