@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+    {% block content %}
+    
+    <!-- carrusel -->
+    <main role="main">
+        <div class="container">
+            <section class="text-center">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'core/img/foto1.jpg' %}" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'core/img/foto2.jpg' %}" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'core/img/foto3.jpg' %}" class="d-block w-100" alt="">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- productos -->
+    {% if productos %}
+    <div class="albun py-2 bg-light">
+        <div class="container">
+            <div id="producto" class="row">
+                {% for producto in productos %}
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-4 box-shadow">
+                        <div class="text-center">
+                            <img src="/media/{{ producto.imagen }}" class="card-img-top producto-tamaño" alt="">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <div class="lead text-secondary fw-bold">
+                                DISPONIBLE
+                            </div>
+                            <div class="lead text-success-emphasis fw-bold">
+                                {{ producto.precio }}
+                            </div>
+                            <br>
+                            {{ producto.nombre }}
+                            <b>Descipción</b>
+                            <div class="text-truncate">
+                                <p class="card-text descripcion" data-toggle="tooltip" title="{{ producto.descripcion }}"> 
+                                    {{ producto.descripcion }} 
+                                </p>
+                            </div>
+                            <b>En stock 5 unidades</b>
+                            <b><a href="">ver mas</a></b>
+                            </p>
+                            <div class="d-flex justify-content-between aling-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        Comprar
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <h2>No se encontraron productos</h2>
+    {% endif %}
+    <div class="text-center">
+        <h1>Participa en un concurso</h1>
+        <a href="{% url 'ropa' %}">!Click aqui¡</a>
+    </div>
+    <div id="piePagina">
+    </div>
+
+    {% endblock content %}

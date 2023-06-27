@@ -1,0 +1,148 @@
+
+    {% extends 'core/base.html' %}
+    {% load static %}
+    
+    {% block content %}
+    <br>
+    <br>
+    <div class="conntainer-fluid">
+        <div class="row ">
+            <div class="col-sm-12 col-md-6">
+                <h1 class="text-center">Detalle de Boleta 534</h1>
+            </div>
+            <div class="col-sm-4 sol-md-6" id="container">
+                <div class="col-sm-4 col-md-4">
+                    <div class="circulo text-bg-success " >
+                        <h2>✔</h2>
+                    </div>
+                    <div class="text-center">
+                        <b>Vendido</b> 
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4" >
+                    <div class="circulo text-bg-success ">
+                        <h2>✔</h2>
+                    </div>
+                    <div class="text-center">
+                        <b>Despachado</b> 
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="circulo text-bg-danger" >
+                        <h2>✘</h2>
+                    </div>
+                    <div class="text-center">
+                        <b>Entregado</b> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">%Suscritor</th>
+                    <th scope="col">%Oferta</th>
+                    <th scope="col">%Desc total</th>
+                    <th scope="col">Descuentos</th>
+                    <th scope="col">Precio a pagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Perros</th>
+                    <td>Saco royal Canin 3kg</td>
+                    <td>$8.000</td>
+                    <td>5%</td>
+                    <td>5%</td>
+                    <td>10%</td>
+                    <td>800</td>
+                    <td>7.200</td>
+                </tr>
+                <tr>
+                    <th scope="row">Perros</th>
+                    <td>Hueso gris 3kg</td>
+                    <td>$2.000</td>
+                    <td>0%</td>
+                    <td>0%</td>
+                    <td>0%</td>
+                    <td>0</td>
+                    <td>2.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gatos</th>
+                    <td>Raton de juguete</td>
+                    <td>$3.000</td>
+                    <td>25%</td>
+                    <td>0%</td>
+                    <td>25%</td>
+                    <td>750</td>
+                    <td>2.250</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gatos</th>
+                    <td>Pescado de juguete</td>
+                    <td>$5.000</td>
+                    <td>0%</td>
+                    <td>10%</td>
+                    <td>10%</td>
+                    <td>500</td>
+                    <td>4.500</td>
+                </tr>
+                <tr>
+                    <th scope="row"><br></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row"><br></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main py-2 bg-light">
+        <div class="conntainer " >
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-9"></div>
+                        <div class="col-3">
+                            <form class="from" novalidate>
+                                <div class="col" >
+                                    <label for="siniva" class="form-label">Precio sin IVA</label>
+                                    <input type="text"  class="form-control" value="$15.950" required>
+                                </div>
+                                <div class="col ">
+                                    <label for="coniva" class="form-label">Valor del IVA</label>
+                                    <input type="text"  class="form-control" value="19%" required>
+                                </div>
+                                <div class="col">
+                                    <label for="total" class="form-label">Total a pagar</label>
+                                    <input type="text"  class="form-control" value="$18.340" required>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% endblock content %}

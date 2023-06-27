@@ -1,0 +1,21 @@
+
+    {% extends 'core/base.html' %}
+    {% load static %}
+    
+    {% block content %}
+        <div class="text-center">
+        <h1>¡Concursa por una prenda de vestir!</h1>
+        <h3>¡Por compras superiores a $20.000 en productos ya estás participando!</h3>
+        <button id="ver_productos" class="btn btn-success">Ver productos</button>
+    </div>
+    <div class="albun py-2 bg-light">
+        <div class="container">
+            <div id="producto" class="row">
+                
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+    {% block script %}
+    <script src="{% static 'core/js/scriptf.js' %}"></script>
+    {% endblock script%}

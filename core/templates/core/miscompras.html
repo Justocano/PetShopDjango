@@ -1,0 +1,98 @@
+
+    {% extends 'core/base.html' %}
+    {% load static %}
+    
+    {% block content %}
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nro boleta</th>
+                        <th scope="col">Fecha venta</th>
+                        <th scope="col">Fecha despacho</th>
+                        <th scope="col">Fecha entrega</th>
+                        <th scope="col">Monto total</th>
+                        <th scope="col">Estado actual</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">534</th>
+                        <td>01/02/2023</td>
+                        <td>01/02/2023</td>
+                        <td>01/02/2023</td>
+                        <td>$10.990</td>
+                        <td>Despacho</td>
+                        <td><a href="{% url 'boleta' %}">Ver detalle</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">765</th>
+                        <td>05/12/2022</td>
+                        <td>05/12/2022</td>
+                        <td>05/12/2022</td>
+                        <td>$39.900</td>
+                        <td>Entregado</td>
+                        <td><a href="{% url 'boleta' %}">Ver detalle</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">649</th>
+                        <td>18/08/2022</td>
+                        <td>18/08/2022</td>
+                        <td>19/08/2022</td>
+                        <td>$24.990</td>
+                        <td>Despacho</td>
+                        <td><a href="{% url 'boleta' %}">Ver detalle</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">247</th>
+                        <td>04/03/2023</td>
+                        <td>05/03/2023</td>
+                        <td>05/03/2023</td>
+                        <td>$75.100</td>
+                        <td>Vendido</td>
+                        <td><a href="{% url 'boleta' %}">Ver detalle</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><br></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><br></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><br></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><br></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </table>
+    </div>
+    {% endblock content %}
