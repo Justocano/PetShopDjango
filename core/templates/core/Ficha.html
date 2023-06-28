@@ -17,19 +17,19 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-3">
-              <img width="100%" height="300" class="producto" src="{% static 'core/img/Imagen4.png' %}" alt="">
+              <img width="100%" height="300" class="producto" src="/media/{{ imagen }}" alt="">
             </div>
             <div id="texto" class="col-9  Descripcion"> <br>
 
-              <b class="titulo-producto">Belcando Mastercraft Topping</b> <br>
-              <b class="estado-producto">DISPONIBLE</b> <br>
-              <b class="precio-producto">$3.490</b> <br>
+              <b class="titulo-producto">{{ nombre }}</b> <br>
+              <b class="estado-producto">{{ html_estado|safe }}</b> <br>
+              <b class="precio-producto">{{ html_precio|safe }}</b> <br>
               Descripción : <br> <br>
 
-              Sobre 100mg, Producto para perro <br> <br>
-              En stock: 2 unidades <br><br>
+              {{ descripcion }}<br> <br>
+              {{ html_stock|safe }} <br><br>
               <button type="submit" class="btn btn-primary">Comprar ahora</button>
-              <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+              <a href="{% url 'agregar_producto_al_carrito' id %}" class="btn btn-secondary ancho-150px"> Agregar al carrito </a>
             </div>
 
           </div>
