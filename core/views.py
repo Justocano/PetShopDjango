@@ -14,10 +14,17 @@ from core.templatetags.custom_filters import formatear_dinero, formatear_numero
 # Create your views here.
 
 def inicio(request):
-    productos = Producto.objects.all().order_by('id')
-    datos = { 
-        'productos': productos
-    }
+    if request.method == 'POST':
+        buscar = request.POST.get('buscar')
+        registros = Producto.objects.filter(nombre__icontains=buscar).order_by('nombre')
+    else:
+        registros = Producto.objects.all().order_by('nombre')
+
+    productos = []
+    for registro in registros:
+        productos.append(obtener_info_producto(registro.id))
+
+    datos = { 'productos': productos }
     return render(request, "core/inicio.html",datos)
 
 def poblar(request):
@@ -124,6 +131,10 @@ def ficha(request,producto_id):
     context = obtener_info_producto(producto_id)
     return render(request, 'core/Ficha.html', context)
 
+def salir(request):
+    logout(request)
+    return redirect(inicio)
+
 
 def obtener_info_producto(producto_id):
 
@@ -131,8 +142,8 @@ def obtener_info_producto(producto_id):
     stock = Bodega.objects.filter(producto_id=producto_id).exclude(detalleboleta__isnull=False).count()
     
     # Preparar texto para mostrar estado: en oferta, sin oferta y agotado
-    con_oferta = f'<span class="text-primary"> EN OFERTA {producto.descuento_oferta}% DE DESCUENTO </span>'
-    sin_oferta = '<span class="text-success"> DISPONIBLE EN BODEGA </span>'
+    con_oferta = f'<span class="text-primary"> EN OFERTA {producto.descuento_oferta}% DSCTO </span>'
+    sin_oferta = '<span class="text-success"> DISPONIBLE  </span>'
     agotado = '<span class="text-danger"> AGOTADO </span>'
 
     if stock == 0:

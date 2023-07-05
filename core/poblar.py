@@ -194,10 +194,18 @@ def poblar_bd():
         # Categoría "Perros"
         {
             'id': 1,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Saco de alimento Royal Canin 3Kg sabor pavo',
-            'descripcion': 'Saco de alimento Royal Canin 3Kg sabor pavo, con vitaminas, 25% de proteínas, para perros adultos',
-            'precio': 12000,
+            'categoria': Categoria.objects.get(id=2),
+            'nombre': 'Inaba churu atún con salmon',
+            'descripcion': '''Línea: Churu
+                                Tipo de golosina para perros y gatos: Snack
+                                Peso neto: 56 g
+                                Sabor: Salmón
+                                Unidades por envase: 4
+                                Formato de venta: Unidad
+                                Unidades por pack: 1
+                                Mascotas recomendadas: Gatos
+                                Textura: Húmedo''',
+            'precio': 2205,
             'descuento_subscriptor': 5,
             'descuento_oferta': 5,
             'imagen': 'productos/Imagen1.png'
@@ -205,9 +213,13 @@ def poblar_bd():
         {
             'id': 2,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Collar para perros ajustable',
-            'descripcion': 'Collar de nylon resistente para perros de diferentes tamaños, ajustable y cómodo.',
-            'precio': 1500,
+            'nombre': 'Taste of the wild pacific stream',
+            'descripcion': '''Especificaciones
+                                Sabor: Salmón
+                                Peso de la unidad: 5.6 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 36990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
             'imagen': 'productos/Imagen2.png'
@@ -215,19 +227,24 @@ def poblar_bd():
         {
             'id': 3,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Juguete mordedor para perros',
-            'descripcion': 'Juguete resistente de caucho para perros, ideal para aliviar el estrés y promover la salud dental.',
-            'precio': 800,
+            'nombre': 'Belcando | alimento húmedo latas',
+            'descripcion': '''Peso de la unidad: 100 g
+                                Tipo de envase: Sobre
+                                Tipo de comida para mascotas: Húmeda''',
+            'precio': 4200,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
             'imagen': 'productos/Imagen3.png'
         },
         {
             'id': 4,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Cama acolchada para perros',
-            'descripcion': 'Cama suave y cómoda para perros de todas las razas y tamaños, lavable y duradera.',
-            'precio': 3500,
+            'categoria': Categoria.objects.get(id=2),
+            'nombre': 'Belcando mastercraft topping',
+            'descripcion': '''Sabor: Pavo
+                                Peso de la unidad: 100 g
+                                Tipo de envase: Sobre
+                                Tipo de comida para mascotas: Humeda''',
+            'precio': 3490,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
             'imagen': 'productos/Imagen4.png'
@@ -235,9 +252,12 @@ def poblar_bd():
         {
             'id': 5,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Correa retráctil para perros',
-            'descripcion': 'Correa extensible y resistente para pasear a tu perro de forma segura y cómoda.',
-            'precio': 2500,
+            'nombre': 'Belcando pouch | sobres',
+            'descripcion': '''Especificaciones
+                                Peso de la unidad: 125 g
+                                Tipo de envase: Sobre
+                                Tipo de comida para mascotas: Húmeda''',
+            'precio': 39900,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
             'imagen': 'productos/Imagen5.png'
@@ -245,50 +265,65 @@ def poblar_bd():
         # Categoría "Gatos"
         {
             'id': 6,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Rascador para gatos',
-            'descripcion': 'Rascador de sisal con plataformas y juguetes para mantener entretenidos a tus gatos.',
-            'precio': 3500,
+            'categoria': Categoria.objects.get(id=1),
+            'nombre': ' Fit formula adulto',
+            'descripcion': '''Sabor: Mix
+                                Peso de la unidad: 20 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 2205,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
             'imagen': 'productos/Imagen6.png'
         },
         {
             'id': 7,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Comedero automático para gatos',
-            'descripcion': 'Comedero con temporizador para alimentar a tus gatos de forma automática y controlada.',
-            'precio': 5000,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 0,
-            'imagen': 'productos/Imagen7.png'
-        },
-        {
-            'id': 8,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Juguete interactivo para gatos',
-            'descripcion': 'Juguete con luces y movimientos aleatorios para estimular el juego y ejercicio de tus gatos.',
-            'precio': 2000,
+            'categoria': Categoria.objects.get(id=1),
+            'nombre': 'Nomade adulto 3Kg',
+            'descripcion': '''Sabor: Mix
+                                Peso de la unidad: 3 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 10990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 5,
             'imagen': 'productos/Imagen8.png'
         },
         {
+            'id': 8,
+            'categoria': Categoria.objects.get(id=1),
+            'nombre': 'Acana pupy recipe',
+            'descripcion': '''Sabor: Mix
+                                Peso de la unidad: 11.4 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 65800,
+            'descuento_subscriptor': 5,
+            'descuento_oferta': 0,
+            'imagen': 'productos/Imagen7.png'
+        },
+        {
             'id': 9,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Arena para gatos',
-            'descripcion': 'Arena absorbente y sin olor para mantener limpio el arenero de tus gatos.',
-            'precio': 1500,
+            'categoria': Categoria.objects.get(id=1),
+            'nombre': 'Fit formula cahorro',
+            'descripcion': '''Sabor: Mix
+                                Peso de la unidad: 10 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 24990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
             'imagen': 'productos/Imagen9.png'
         },
         {
             'id': 10,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Transportadora para gatos',
-            'descripcion': 'Transportadora segura y cómoda para llevar a tus gatos de manera segura.',
-            'precio': 4000,
+            'categoria': Categoria.objects.get(id=1),
+            'nombre': 'Fit formula adulto',
+            'descripcion': '''Sabor: Pato
+                                Peso de la unidad: 11.34 kg
+                                Tipo de envase: Bolsa
+                                Tipo de comida para mascotas: Seca''',
+            'precio': 75100,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
             'imagen': 'productos/Imagen10.png'
@@ -296,20 +331,33 @@ def poblar_bd():
         # Categoría "Pájaros"
         {
             'id': 11,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Jaula para pájaros',
-            'descripcion': 'Jaula amplia y segura para alojar a tus pájaros con comodidad.',
-            'precio': 5000,
+            'categoria': Categoria.objects.get(id=2),
+            'nombre': ' Inaba churu atún con ostiones',
+            'descripcion': '''Línea: Snack
+                                Tipo de golosina para perros y gatos: Snack
+                                Peso neto: 14 g
+                                Unidades por envase: 4
+                                Formato de venta: Unidad
+                                Textura: Húmedo''',
+            'precio': 2205,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
             'imagen': 'productos/Imagen11.png'
         },
         {
             'id': 12,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Comedero automático para pájaros',
-            'descripcion': 'Comedero con temporizador para alimentar a tus pájaros de forma automática y controlada.',
-            'precio': 3000,
+            'categoria': Categoria.objects.get(id=2),
+            'nombre': 'Inaba churu pollo ',
+            'descripcion': '''Línea: Churu Bites
+                                Tipo de golosina para perros y gatos: Snack
+                                Peso neto: 30 g
+                                Sabor: Pollo y salmón
+                                Unidades por envase: 3
+                                Formato de venta: Unidad
+                                Unidades por pack: 1
+                                Mascotas recomendadas: Gatos
+                                Textura: Húmedo''',
+            'precio': 2500,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
             'imagen': 'productos/Imagen12.png'

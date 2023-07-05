@@ -28,13 +28,46 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %} ">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'registro' %}">Registro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'ingresar' %}">Iniciar sesión</a>
-                        </li>
-                        
+                        {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'registro' %}">Registro</a>
+                            </li>
+                        {% endif %}
+                        {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'ingresar' %}">Iniciar sesión</a>
+                            </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" 
+                                aria-expanded="false" href="{% url 'ingresar' %}">
+                                
+                                {% if user.is_superuser %}
+                                <span class="text-danger fw-bold">
+                                {% elif user.is_staff %}
+                                <span class="text-success fw-bold">
+                                {% else %}
+                                <span>
+                                {% endif %}
+                                {{ user.first_name }} {{ user.last_name }}
+                                {% if user.perfil.subscrito %}
+                                    (premium)
+                                {% endif %}
+                                </span>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'misDatos' %}"> Mis datos </a></li>
+                                {% if not user.is_staff and not user.is_superuser %}
+                                <li><a class="dropdown-item" href="{% url 'miscompras' %}"> Mis compras </a></li>
+                                {% endif %}
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'salir' %}"> Salir </a></li>
+                            </ul>
+                            </li>
+                        {% endif %}
+                        {% if user.is_authenticated and user.is_staff or user.is_authenticated and user.is_superuser %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" 
                                 aria-expanded="false">
@@ -48,23 +81,27 @@
                             <li><a class="dropdown-item" href="{% url 'ventas' %}"> Ventas </a></li>
                             </ul>
                         </li>
-
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'miscompras' %}">Mis compras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Cerrar sesión</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'carrito' %}">Carrito</a>
-                        </li>
+                        {% if mostrar_carrito %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'carrito' %}">Carrito</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'ropa' %}">Concurso</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <form method="post" action="{% url 'inicio' %}" class="d-flex" role="search">
+                        {% csrf_token %}
+                        <input class="form-control me-2" type="search" placeholder="Buscar productos" 
+                            aria-label="Search" id="buscar" id="buscar" name="buscar">
+                        <button class="btn btn-outline-success" type="submit"> Buscar </button>
                     </form>
                 </div>
             </div>

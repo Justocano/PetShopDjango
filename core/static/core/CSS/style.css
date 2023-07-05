@@ -8,6 +8,18 @@
     margin: auto!important;
 }
 
+#link-bloque {
+    display: inline-block; /* Mostrar como bloque en línea */
+    text-decoration: none !important; /* Eliminar subrayado del enlace */
+    color: inherit; /* Heredar el color del texto */
+    text-decoration: lin;
+}
+.link-bloque:hover {
+    /* Estilos adicionales al pasar el mouse sobre el enlace */
+    cursor: pointer;
+    border: 1px solid lightblue;
+}
+
 .w-100 {
     width: 100%!important;
 }
