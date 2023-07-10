@@ -8,24 +8,18 @@
         <section >
             <h1>Mis Datos</h1>
             <br>
-            <form  id="form" method="POST" enctype="multipart/form-data">
+            <form  id="form" method="GET" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="container-fluid" >
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             {% for field in form %}
-                            <div class="mb-3  fw-bold">
-                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                                {{ field }}
-                            </div>
+                                <div class="mb-3  fw-bold">
+                                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                    {{ field }}
+                                </div>
                             {% endfor %}
-                            {% if form.errors %}
-                            <br>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ form.errors }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            {% endif %}
+                            
                         </div>
                         <div class="col-sm-12 col-md-6">
                             {% if form.imagen.value %}

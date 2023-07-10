@@ -8,77 +8,28 @@
             <section >
                 <h1>Mantenedor de Usuarios</h1>
                 <br>
-                <form class="row g-3 needs-validation" id="formulario4" action novalidate="novalidate">
+                <formmethod="POST" enctype="multipart/form-data" id="formulario4">
+                    {% csrf_token %}
                     <div class="container-fluid" >
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
+                                {% for field in form %}
                                 <div class="mb-3  fw-bold">
-                                    <label for="id" class="form-label">Id:</label>
-                                    <input type="number"  class="form-control" name="id" id="id"  required>
+                                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                    {{ field }}
                                 </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="Select" class="form-label">Tipo de usuario</label>
-                                    <select id="Select" class="form-select">
-                                        <option>
-                                            Cliente
-                                        </option>
-                                        <option>
-                                            Administrador
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="rutChileno" class="form-label">Rut:</label>
-                                    <input type="text" class="form-control" name="rutChileno" id="rutChileno"  required>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="nombre" class="form-label">Nombres:</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre"  required>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="apellido" class="form-label">Apellidos:</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido"  required>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="correo" class="form-label">Correo Electrónico:</label>
-                                    <input type="text" class="form-control" name="correo" id="correo"  required>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="direccion" class="form-label">Dirección:</label>
-                                    <textarea class="form-control" name="direccion" id="direccion" rows="4"></textarea>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"  id="suscripcion" >
-                                    <label class="form-check-label" for="suscripcion">
-                                    <strong>
-                                        Suscribirme a la fundación
-                                    </strong>
-                                    </label>
-                                    <div id="suscHelp" class="form-text">Deseo suscribirme con un aporte de $3.000 mensuales y obtener un 5% de descuento en mis compras</div>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                    <label for="contraseña" class="form-label">Contraseña:</label>
-                                    <input type="password" class="form-control" name="contraseña" id="contraseña"  required>
-                                    <br> 
-                                    <button class="btn btn-primary" type="botton">Generar contraseña </button>
-                                </div>
+                                {% endfor %}
+                                
                                 <button class="btn btn-primary" type="submit">Guardar </button>
                                 <button class="btn btn-primary" type="submit">Nuevo </button>
                                 <button class="btn btn-primary" type="reset">Eliminar </button>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <img src="{% static 'core/img/foto-perfil.jpg' %}" alt="" class="user_img">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="file" class="form-control" >
-                                        </td>
-                                    </tr>
-                                </table>
+                                {% if form.imagen.value %}
+                                <img id="admin-producto-imagen" src="/media/{{ form.imagen.value }}">
+                                {% else %}
+                                <img id="admin-producto-imagen" src="{% static 'core/img/sin-imagen.png' %}">
+                                {% endif %}
                             </div>
                             
                         </div>

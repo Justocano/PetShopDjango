@@ -63,4 +63,14 @@ $(document).ready(function () {
             element.after('<br>'); 
         },
     })
+    $('#id_imagen').change(function() {
+        var input = this;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#admin-producto-imagen').attr('src', e.target.result).show();
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
 });

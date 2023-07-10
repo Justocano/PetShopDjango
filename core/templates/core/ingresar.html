@@ -19,7 +19,9 @@
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"> Ingresar </button>
             </div>
-            
+            <div class="text-center">
+                <a href={% url 'registro' %}>¿no tienes una Cuenta?</a>
+            </div>  
             {% if messages %}
                 {% for message in messages %}
                 <div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -8,7 +8,7 @@
             <section >
                 <h1>Mantenedro de Productos</h1>
                 <br>
-                <form class="row g-3 needs-validation" id="formulario3" action novalidate="novalidate">
+                <form method="POST" enctype="multipart/form-data" id="form">
                     {% csrf_token %}
                     <div class="container-fluid" >
                         <div class="row">
@@ -28,7 +28,7 @@
                                 {% if form.imagen.value %}
                                 <img id="admin-producto-imagen" src="/media/{{ form.imagen.value }}">
                                 {% else %}
-                                <img id="admin-producto-imagen" src="{% static 'core/images/sin-imagen.png' %}">
+                                <img id="admin-producto-imagen" src="{% static 'core/img/sin-imagen.png' %}">
                                 {% endif %}
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                 {% endif %}
             </section>
         </div>
-    </div
+    </div>
     {% if productos %}
     <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -88,7 +88,7 @@
                         </form>
                     </td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
             </tbody>
         </table>
         {% endif %}

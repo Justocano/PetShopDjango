@@ -43,6 +43,7 @@
                     </div>
                     {% if messages %}
                         {% for message in messages %}
+                        <img id="registrarme-imagen" src="{% static 'core/img/sin-imagen.png' %}">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ message }}
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -55,5 +56,5 @@
     </div>
     {% endblock content %}
     {% block script %}
-    <script src="{% static 'core/js/Validarfrom.js' %}"></script>
+    <script src="{% static 'core/js/Validarform.js' %}"></script>
     {% endblock script %}
