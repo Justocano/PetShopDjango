@@ -1,0 +1,54 @@
+
+    {% extends 'core/base.html' %}
+    {% load static %}
+    
+    {% block content %}
+        <h1>Historial de Ventas</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th> Nro boleta </th>
+                    <th> Cliente </th>
+                    <th> Venta </th>
+                    <th> Despacho </th>
+                    <th> Entrega </th>
+                    <th> Subscrito </th>
+                    <th> Monto total </th>
+                    <th> Estado actual </th>
+                    <th> Detalle </th>
+                    <th colspan="4">
+                        Cambiar estado
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for boleta in historial %}
+                <tr>
+                    <td> {{ boleta.nro_boleta }} </td>
+                    <td> {{ boleta.nom_cliente }} </td>
+                    <td> {{ boleta.fecha_venta }} </td>
+                    <td> {{ boleta.fecha_despacho }} </td>
+                    <td> {{ boleta.fecha_entrega }} </td>
+                    <td> {{ boleta.subscrito }} </td>
+                    <td> {{ boleta.total_a_pagar }} </td>
+                    <td> {{ boleta.estado }} </td>
+                    <td>
+                        <button type="submit" class="btn btn-sm btn-primary">Detalle</button>
+                    </td>
+                    <td>
+                        <span>
+                            <div class="btn-group">
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Anulado'  %}" class="btn btn-xs btn-danger">Anulado</a> &nbsp;&nbsp;
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Vendido'  %}" class="btn btn-xs btn-success">Vendido</a> &nbsp;&nbsp;
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Despachado'  %}" class="btn btn-xs btn-primary">Despachado</a> &nbsp;&nbsp;
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Entregado'  %}" class="btn btn-xs btn-secondary">Entregado</a>
+                            </div>
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock content %}

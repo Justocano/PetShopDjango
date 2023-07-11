@@ -1,0 +1,135 @@
+* todas las paginas */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.m-auto {
+    margin: auto!important;
+}
+
+#link-bloque {
+    display: inline-block; /* Mostrar como bloque en línea */
+    text-decoration: none !important; /* Eliminar subrayado del enlace */
+    color: inherit; /* Heredar el color del texto */
+    text-decoration: lin;
+}
+.link-bloque:hover {
+    /* Estilos adicionales al pasar el mouse sobre el enlace */
+    cursor: pointer;
+    border: 1px solid lightblue;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+main {
+    display: block;
+}
+
+.producto-tamaño{
+    height: 150px !important;
+    max-width: 150px !important;
+}
+
+
+
+/* formularios */
+.precio-comun{
+    text-decoration: line-through;
+}
+
+.precio-oferta{
+    color: chartreuse;
+}
+
+.btn-group{
+    background-color: lightskyblue;
+}
+
+
+.user_img{
+    max-width: 200px;
+    border: 2px solid rgb(0, 0, 0) ;
+}
+
+
+
+input [type="text"],input [type="email"],input [type="password"],textarea{
+    border: 2px  !important;
+}
+
+/* tablas */
+
+
+#registro{
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+}
+
+
+.card {
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translate(-3%);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.circulo {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background: rgb(207, 207, 207);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    margin:0px auto;
+    padding:0%
+}
+
+.circulo > h2 {
+	font-family: sans-serif;
+	color: white;
+	font-size: 45px;
+	font-weight: bold;
+}
+
+.table-responsive{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#container{
+    display: flex;
+}
+
+.linea{
+    width: 100px;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+#registrarme-imagen {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 3px;
+    border: 2px solid gray;
+}
