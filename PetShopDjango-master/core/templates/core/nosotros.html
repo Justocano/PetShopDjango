@@ -1,0 +1,91 @@
+
+  {% extends 'core/base.html' %}
+  {% load static %}
+  
+  {% block content %}
+    <div class="albun py-2 bg-light">
+    <div class="container">
+      <div id="nosotros" class="row">
+        <div class="col-12">
+          <!-- titulo -->
+          <h1>Nosotros</h1>
+          <p>PetShop es la tienda online más completa para mascotas creada por pet lovers para pet lovers! Somos la
+            tienda
+            en linea de mascotas con mayor variedad de productos y servicios a domicilio, contamos con más de 4.000
+            productos (alimentos, dietas naturales, snacks, medicinas, higiene, accesorios).</p>
+          <p>
+            Nuestro emprendimiento es sin fines de lucro, y estamos dedicados a la manutención de animales en peligro
+            de maltrato.
+          </p>
+          <p>
+            Siempre estamos preocupados por la salud y bienestar de tus mascotas y las que cuidamos en nuestra
+            fundación.
+          </p>
+          <p>
+            Tanto tu mascota como las que acogemos son lo más importante para nosotros. Nos esforzamos dia a dia para dar
+            la mejor experiencia y servicio a los pet lovers.
+          </p>
+          <p>
+            En Chile, llegamos a todo Santiago y proximamente estaremos con cobertura nacional. Tenemos entregas el
+            mismo dia en 3 rutas diferentes para que elijas la que más te conviene. Además tenemos envios nacionales con
+            tiempos de entrega de 3 dias hábiles.
+          </p>
+          <p>
+            Desde PetShop apoyamos y colaboramos orgánicamente y de forma activa con el rescate y adopción animal, es
+            por esto que donamos la mayor partes de nuestras ventas mensualmente a estas causas. Para nosotros es primordial
+            la integridad y bienestar de las mascotas, y por esto te invitamos a suscribirte con una cuota mensual de
+            $3.000 y con ello obtener un 5% de descuento en todas tus compras.
+          </p>
+          <p>
+            Te deseamos la mejor experiencia en nuestra tienda.
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="card mb-4 box-shadow">
+            <div class="text-center">
+              <img src="{% static 'core/img/gerent.jpg' %}" class="card-img-top producto-tamaño" alt="">
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <b>Justo Cano</b>
+                <div class="lead text-secondary fw-bold">
+                Gerente General
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="card mb-4 box-shadow">
+            <div class="text-center">
+              <img src="{% static 'core/img/hhhy.png' %}" class="card-img-top producto-tamaño" alt="">
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <b>Fabian Valenzuela</b>
+                <div class="lead text-secondary fw-bold">
+                Atención de Clientes
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="card mb-4 box-shadow">
+            <div class="text-center">
+              <img src="{% static 'core/img/marketing.png' %}" class="card-img-top producto-tamaño" alt="">
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <b>Carlos Pino</b>
+                <div class="lead text-secondary fw-bold">
+                Encargado de marketing
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}

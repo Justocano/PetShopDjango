@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- administrador -->
+            <div class="col-12">
+                <h1>Administrar tienda</h1>
+                <ul class="funciones">
+                    <li><a href="{% url 'usuarios' %}">Mantenedor de usuarios</a></li>
+                    <li><a href="{% url 'productos' %}">Mantenedor de productos</a></li>
+                    <li><a href="{% url 'ventas' %}">Historial de ventas</a></li>
+                    <li><a href="{% url 'bodega' %}">Mantenedor de bodega</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+{% endblock content %}
