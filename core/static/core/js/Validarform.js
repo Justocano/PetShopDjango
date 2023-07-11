@@ -108,7 +108,7 @@ $(document).ready(function() {
       errorPlacement: function(error, element) {
         error.insertAfter(element); // Inserta el mensaje de error después del elemento
         error.addClass('error-message'); // Aplica una clase al mensaje de error
-        //element.after('<br>'); 
+        element.after('<br>'); 
       },
   });
 
